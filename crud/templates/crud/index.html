@@ -1,0 +1,57 @@
+{% extends 'Layout.html' %}
+{% block content %}
+
+<table class = "table table-bordered">
+    <thead>
+    <tr>
+
+<th>ID</th>
+
+<th>NAME </th>
+<th>Email </th>
+<th>Address </th>
+<th>CITY</th>
+<th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for row in data %}
+
+    <tr>
+        <td> {{ row.id }} </td>
+        <td> {{ row.collage_name }} </td>
+        <td> {{ row.collage_email }} </td>
+        <td> {{ row.collage_address }} </td>
+        <td> {{ row.collage_city }} </td>
+
+         <td>
+    <span><a href = "/crud/view?id ={{ row.id }} " class="btn btn-info btn-xs">VIEW</a></span>
+             <span><a href = "/crud/update?id={{ row.id }}" class="btn btn-success btn-xs">UPDATE</a></span>
+        <span><a onclick="return deleteItem()" href="/crud/delete?id={{ row.id }}" class="btn btn-warning btn-xs">DELETE</a></span>
+    </tr>
+    </td>
+    </tr>
+
+    {% endfor %}
+</tbody>
+</table>
+<script>
+
+    function deleteItem(){
+
+    if(confirm('Are you sure to delete item?')){
+
+         return true;
+
+    }
+    else {
+         return false;
+    }
+   }
+
+</script>
+
+
+
+{% endblock %}

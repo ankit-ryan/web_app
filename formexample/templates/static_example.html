@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        .in{
+            color:yellow
+           }
+
+    </style>
+    {% load static %}
+     <link href="{% static 'css/new.css' %}" rel="stylesheet">
+    <script src="{% static 'js/new.js' %}" rel="text/stylesheet">
+
+    </script>
+</head>
+<h4 class ="ext">Static File management </h4>
+<img src="{% static 'images/animestyle sherlock.jpg' %}" height="300" width="300">
+<button onclick="clickMe()">Button 1</button>
+<button onclick="clickMe2()">Button 2</button>
+<h3 class ="ext">inline css...</h3>
+<h4 class ="ext2">External css..</h4>
+</body>
+</html>
